@@ -12,7 +12,6 @@
  */
 function factorial(number) {
   let result = 1;
-
   if (number < 0) {
     return "Not defined for negative numbers";
   }
