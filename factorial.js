@@ -11,7 +11,11 @@
  * @returns {number} the factorial of the input number
  */
 function factorial(number) {
+  
   let result = 1;
+  let steps = "";
+  let display = "";
+
   if (number < 0) {
     return "Not defined for negative numbers";
   }
@@ -20,12 +24,15 @@ function factorial(number) {
     return 1;
   }
 
-  for (let i = 1; i <= number; i++) {
+  for (let i = number; i > 1; i--) {
     result *= i;
+    steps += i === 1 ? `${i}` : `${i} x `;
   }
 
-  return result;
+  display = `${number}! = ${steps} = ${result}`;
+
+  return display;
 }
 
 console.log(factorial(-1));
-console.log(factorial(100));
+console.log(factorial(5));
